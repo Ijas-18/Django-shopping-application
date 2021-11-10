@@ -1,0 +1,64 @@
+{%extends 'shopping/base.html'%} {%block content%}
+<div class='container'>
+	<h1 class='my-3'>About</h1>
+    <hr>
+	<p>This is a website where you can buy books and make it sent to your E-mail.<br>
+<li>In <a href="{%url 'shop-home'%}">Home</a> you can see the list of books available.
+<li>In <a href="{%url 'user-profile'%}">Profile</a> you can see and update your details.
+<li>In <a href="{%url 'user-profile'%}">Order</a> you can see all of your orders made in this site.
+<li>If you are a new user click <a href="{%url 'user-register'%}">Register</a> to create a new account or click <a href="{%url 'user-login'%}">LogIn</a> to login to your account.</p>
+<br>
+<h1>Frequently Asked Questions(FAQ)</h1>
+<hr>
+<p>
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+            How to order a Book
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ul>
+            	<li>Go to <a href="{%url 'shop-home'%}">Home</a> to see the list of books available
+                <li>Select the book you need and you will see the details of the book
+                <li>Click Buy Now button below description to make an order
+                <li>On the next page click Yes and wait for sometime
+                <li>Finally, a success message will be displayed saying your order has been completed.
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            How to Reset account password
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ul>
+            	<li>Go to <a href="{%url 'user-login'%}">LogIn</a> and click forgot password or click <a href="{%url 'password_reset'%}">Here</a>
+                <li>Enter your email you used to login and click on 'Request Password Reset'
+                <li>A E-mail with a link to reset password will then be sent to your registerd E-mail Address
+                <li>Click the link and Enter your new password
+                <li>You can now be able to login with your new password
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+<h6 class='text-center'>Created by
+    <strong><a href='https://www.linkedin.com/in/ijas-rasool/' target="_blank" class='text-decoration-none link-dark'>
+        Ijas Rasool
+        </a>
+    </strong>
+</h6>
+
+</div>
+{%endblock content%}

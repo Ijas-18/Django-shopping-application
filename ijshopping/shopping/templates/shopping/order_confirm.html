@@ -1,0 +1,12 @@
+{%extends 'shopping/base.html'%} {%block content%}
+<div class="container">
+    <h1>Your book pdf will be sent to your registerd Email Id</h1><br>
+    <h5>Are you sure you want to continue</h5>
+    <form method="post">
+        {% csrf_token %}
+        <a href='{%url 'shop-home'%}' class='btn btn-outline-info'>No</a>
+        <button class="btn btn-outline-success">Yes</button>
+        <small>After clicking yes wait for sometime</small>
+    </form>
+</div>
+{%endblock content%}

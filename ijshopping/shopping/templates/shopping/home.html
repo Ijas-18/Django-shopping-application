@@ -1,0 +1,28 @@
+{%extends 'shopping/base.html'%} {%block content%}
+<div class="container">
+    {%if user.is_authenticated%}
+    <h1 class="display-1 text-center">Welcome {{user.username}}</h1>
+    <h1 class="text-center">Your current balance in wallet is ${{user.profile.money}}</h1>
+    {%else%}
+    <h1 class="display-1 text-center">Welcome Guest</h1>
+    <h1 class="text-center">Your current balance in wallet is $0</h1>
+    <h3 class='text-center'>Create an account to get free $100</h3>
+    {%endif%}
+</div>
+
+
+<div class="container-fluid d-flex align-content-around flex-wrap p-3">
+    {%for book in books%}
+    <div class="card m-3" style="width: 18rem;">
+        <img src="{{book.image.url}}" class="card-img-top" alt="{{book.title}}">
+        <div class="card-body">
+            <h4 class='card-title'>{{book.title}}</h4>
+        </div>
+        <div class='card-footer bg-transparent'>
+        <a href="{%url 'book-detail' book.id%}" class="btn btn-outline-primary">Click Here to Buy ${{book.price}}</a>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+{%endblock content%}

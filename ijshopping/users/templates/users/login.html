@@ -1,0 +1,17 @@
+{%extends 'shopping/base.html'%} {% load crispy_forms_tags %} {% block content %}
+
+<div class="container mt-5" style="width: 400rem;">
+    <h1>Login</h1>
+    <form method="POST" class=" border border-success px-5 py-5">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form|crispy }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Log IN</button><br>
+        <a href="{%url 'password_reset'%}">Forgot password</a><br>
+        <small>Don't have an account?</small>
+        <a href="{%url 'user-register'%}">Click here to register</a>
+    </form>
+</div>
+{%endblock content%}

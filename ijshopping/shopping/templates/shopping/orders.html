@@ -1,0 +1,33 @@
+{%extends 'shopping/base.html'%} {%block content%}
+<div class="container">
+    <h1 class="display-1 text-center">{{user.username}}'s Orders</h1>
+
+
+    <table class="table">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Book Name</th>
+                <th scope="col">Purchase Date</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders%}
+            <tr>
+                <td>{{order.productid.title}}</td>
+                <td>{{order.purchasedate}}</td>
+                <td>${{order.productid.price}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+        <tfoot class="table-success">
+            <td colspan=2>Total money spent</td>
+            <td>${{total_spending}}</td>
+        </tfoot>
+    </table>
+    <div class="d-grid gap-2 col-3 mx-auto">
+        <a href="{%url 'shop-home'%}" class="btn btn-info">Continue Shopping</a>
+    </div>
+</div>
+
+{%endblock content%}

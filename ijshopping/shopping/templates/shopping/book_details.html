@@ -1,0 +1,14 @@
+{%extends 'shopping/base.html'%} {%block content%}
+<div class="container">
+    <img src="{{book.image.url}}" class="img-thumbnail mx-2" style="width: 40rem;">
+
+
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Description</legend>
+        <h6>{{book.description}}</h6>
+        <div class="form-group mb-5">
+            <a href="{%url 'book-order' bookid=book.id%}" class="btn btn-outline-info">Buy Now</a>
+        </div>
+    </fieldset>
+</div>
+{%endblock content%}

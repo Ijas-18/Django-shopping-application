@@ -1,0 +1,8 @@
+{%extends 'shopping/base.html'%}{%block content%}
+<div class="container">
+    <h1 class="display-1">Congratulations {{user.username}} your Book order is succesfully completed.</h1>
+    <h1>Please check your mail for your book.</h1>
+    <a href="{%url 'shop-home'%}" class="btn btn-info">Continue Shopping</a>
+    <a href="{%url 'order-list'%}" class="btn btn-success">Order History</a>
+</div>
+{%endblock content%}
