@@ -38,13 +38,9 @@ class OrderListView(LoginRequiredMixin, ListView):
         return super().get_queryset().filter(userid=self.request.user.id)
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        user_order_list = Orders.objects.filter(userid=self.request.user.id)
-        user_spent_amount = 0
-        for order_list in user_order_list:
-            user_spent_amount += order_list.productid.price
-        context["total_spending"] = user_spent_amount       #passing total spent amount
+        context = super().get_context_data(**kwargs)        
+        total_price = Orders.objects.filter(userid = self.request.user.id).aggregate(total=Sum('productid__price'))
+        context["total_spending"] = total_price['total']       #passing total spent amount
         return context
 
 
