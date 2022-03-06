@@ -5,7 +5,7 @@
     <form method="post">
         {% csrf_token %}
         <a href='{%url 'shop-home'%}' class='btn btn-outline-info'>No</a>
-        <button class="btn btn-outline-success">Yes</button>
+        <button type="submit" class="btn btn-outline-success">Yes</button>
         <small>After clicking yes wait for sometime</small>
     </form>
 </div>
