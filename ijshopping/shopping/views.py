@@ -10,6 +10,7 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.core.mail import EmailMessage
+from django.db.models import Sum
 
 
 class BookListView(ListView):
