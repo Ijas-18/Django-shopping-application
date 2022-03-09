@@ -20,8 +20,3 @@ class Orders(models.Model):
     productid = models.ForeignKey(Books, on_delete=models.CASCADE)
     purchasedate = models.DateTimeField(default=timezone.now)
 
-    # def save(self, *args, **kwargs):
-    #     if self.name == "Yoko Ono's blog":
-    #         return # Yoko shall never have her own blog!
-    #     else:
-    #         super().save(*args, **kwargs)  # Call the "real" save() method.
